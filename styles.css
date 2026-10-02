@@ -726,7 +726,7 @@ h1 em { color: var(--accent); font-style: normal; }
 .chapter-reverse .chapter-media { order: 2; }
 .chapter-reverse .chapter-copy { order: 1; border-left: 0; border-right: 1px solid var(--line); }
 .chapter-reverse .chapter-media::after { background: linear-gradient(250deg, transparent 55%, rgba(6, 7, 10, .38)); }
-.chapter-portrait .chapter-media img { object-fit: contain; }
+.chapter-portrait .chapter-media img { object-fit: cover; }
 
 .credits-section {
   padding-block: 160px;
@@ -787,7 +787,7 @@ h1 em { color: var(--accent); font-style: normal; }
   .chapter-reverse .chapter-media { min-height: 72vw; }
   .chapter-copy { padding: 36px 25px 42px; }
   .chapter-number { margin-bottom: 34px; }
-  .chapter-portrait .chapter-media { min-height: 120vw; }
+  .chapter-portrait .chapter-media { min-height: 72vw; }
   .credits-section { padding-block: 100px; }
   .credits-list > div { grid-template-columns: 95px 1fr; }
 }
