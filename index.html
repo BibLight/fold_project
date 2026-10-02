@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FOLD PROJECT — 一款关于折叠空间、重写路径与寻找真相的独立游戏。"
+    />
+    <meta name="theme-color" content="#090a0f" />
+    <title>FOLD PROJECT — 独立游戏</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="FOLD PROJECT 首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>FOLD<span class="brand-dim">/PROJECT</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+      <nav id="main-nav" class="main-nav" aria-label="主要导航">
+        <a href="#about">游戏简介</a>
+        <a href="#features">游戏特色</a>
+        <a href="#gallery">影像</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> An independent game in development</p>
+          <h1>折叠世界。<br /><em>改写路径。</em></h1>
+          <p class="hero-lead">
+            穿行于一个不断重组的空间，利用“折叠”改变距离、方向与因果，寻找被藏在世界背面的真相。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#about">探索世界</a>
+            <a class="button button-ghost" href="#newsletter">关注开发进度 <span>↗</span></a>
+          </div>
+        </div>
+        <div class="fold-stage reveal" aria-label="抽象的折叠空间视觉">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="fold fold-back"></div>
+          <div class="fold fold-mid"></div>
+          <div class="fold fold-front">
+            <span class="fold-label">F–01</span>
+          </div>
+          <p class="stage-note">SPACE IS ONLY<br />A POINT OF VIEW</p>
+        </div>
+        <a class="scroll-cue" href="#about" aria-label="向下滚动">
+          <span>SCROLL TO ENTER</span><i></i>
+        </a>
+      </section>
+
+      <section id="about" class="about section-shell">
+        <div class="section-index reveal">01 / 游戏简介</div>
+        <div class="about-grid">
+          <h2 class="section-title reveal">如果道路不存在，<br />那就<span>折出一条。</span></h2>
+          <div class="about-copy reveal">
+            <p>
+              <strong>FOLD PROJECT</strong> 是一款以空间折叠为核心机制的叙事解谜游戏。你将操控环境的结构，把遥远的地点相接，让墙面成为地面，并从不可能的角度抵达终点。
+            </p>
+            <p>
+              每一次折叠都会留下痕迹。随着世界逐渐失去稳定，你必须决定哪些道路值得被保留，以及哪一段记忆应该被放弃。
+            </p>
+          </div>
+        </div>
+        <div class="signal-line reveal"><span></span><i></i><span></span></div>
+      </section>
+
+      <section id="features" class="features section-shell">
+        <div class="section-index reveal">02 / 游戏特色</div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-no">001</span>
+            <div class="feature-icon fold-icon" aria-hidden="true"></div>
+            <h3>折叠空间</h3>
+            <p>把二维平面弯折成新的通路。距离不再固定，视角本身就是解谜工具。</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">002</span>
+            <div class="feature-icon echo-icon" aria-hidden="true"></div>
+            <h3>回声叙事</h3>
+            <p>从散落的声音与环境痕迹中拼合故事，每个选择都会改变你理解的真相。</p>
+          </article>
+          <article class="feature-card reveal">
+            <span class="feature-no">003</span>
+            <div class="feature-icon path-icon" aria-hidden="true"></div>
+            <h3>多重路径</h3>
+            <p>没有唯一解法。观察、实验，再用属于自己的方式穿过这个不稳定的世界。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery section-shell">
+        <div class="gallery-heading reveal">
+          <div class="section-index">03 / 影像记录</div>
+          <p>开发中画面 · WORK IN PROGRESS</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="shot shot-wide reveal">
+            <div class="shot-art art-one"><span>WORLD / 01</span></div>
+            <figcaption>被折叠的入口</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <div class="shot-art art-two"><span>WORLD / 02</span></div>
+            <figcaption>失去方向的房间</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <div class="shot-art art-three"><span>WORLD / 03</span></div>
+            <figcaption>回声抵达以前</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="newsletter" class="newsletter section-shell reveal">
+        <div>
+          <p class="eyebrow"><span></span> Development signal</p>
+          <h2>接收来自折叠世界的信号。</h2>
+          <p>留下邮箱，第一时间获取开发日志、试玩消息与发布日期。</p>
+        </div>
+        <form class="signup-form" data-demo-form>
+          <label class="sr-only" for="email">电子邮箱</label>
+          <input id="email" type="email" placeholder="YOUR@EMAIL.COM" required />
+          <button type="submit">保持联络 <span>→</span></button>
+          <p class="form-note" aria-live="polite">演示表单 · 尚未连接邮件服务</p>
+        </form>
+      </section>
+
+      <section id="faq" class="faq section-shell">
+        <div class="section-index reveal">04 / FAQ</div>
+        <div class="faq-list">
+          <details class="reveal">
+            <summary>游戏会登陆哪些平台？<span>＋</span></summary>
+            <p>目前计划首先登陆 PC。正式平台信息会在开发进度确认后公布。</p>
+          </details>
+          <details class="reveal">
+            <summary>什么时候可以玩到？<span>＋</span></summary>
+            <p>项目仍在开发中。你可以关注开发日志，获取试玩版本与发布日期的最新消息。</p>
+          </details>
+          <details class="reveal">
+            <summary>如何联系开发者？<span>＋</span></summary>
+            <p>可以通过页面底部的 GitHub 链接联系。更多社交平台链接将在后续补充。</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>FOLD/PROJECT</a>
+      <p>© <span data-year></span> FOLD PROJECT. ALL SIGNALS RESERVED.</p>
+      <div class="footer-links">
+        <a href="https://github.com/BibLight" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="#top">返回顶部 ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
