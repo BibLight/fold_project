@@ -183,3 +183,164 @@ h1 em { color: var(--accent); font-style: normal; }
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Poster hero: both artwork states stay perfectly aligned. A feathered mask
+   reveals the illuminated state so the light appears to travel across the tree. */
+.poster-hero {
+  height: 122svh;
+  position: relative;
+  background: #000;
+}
+.legacy-hero { display: none; }
+.poster-scene {
+  --pointer-x: 50%;
+  --pointer-y: 42%;
+  --hero-fade: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+  opacity: calc(1 - var(--hero-fade));
+  transform: scale(calc(1 + var(--hero-fade) * .025));
+  will-change: opacity, transform;
+}
+.poster-ambient,
+.poster-layer,
+.poster-vignette { position: absolute; inset: 0; }
+.poster-ambient {
+  z-index: -3;
+  background: url("暗 睁眼.png") center 34% / cover no-repeat;
+  filter: blur(34px) brightness(.28) saturate(.65);
+  opacity: .8;
+  transform: scale(1.09);
+}
+.poster-layer {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.poster-dark {
+  z-index: -2;
+  background-image: url("暗 睁眼.png");
+}
+.poster-light-flow,
+.poster-pointer-light {
+  z-index: -1;
+  background-image: url("灯 睁眼.png");
+}
+.poster-light-flow {
+  opacity: .92;
+  -webkit-mask-image: radial-gradient(ellipse, #000 0 24%, rgba(0, 0, 0, .92) 42%, transparent 74%);
+  mask-image: radial-gradient(ellipse, #000 0 24%, rgba(0, 0, 0, .92) 42%, transparent 74%);
+  -webkit-mask-size: 44% 76%;
+  mask-size: 44% 76%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: tree-light-flow 10s cubic-bezier(.45, 0, .55, 1) infinite;
+  filter: saturate(.95) contrast(1.03);
+}
+.poster-pointer-light {
+  opacity: .26;
+  -webkit-mask-image: radial-gradient(circle 15vmax at var(--pointer-x) var(--pointer-y), #000 0, rgba(0, 0, 0, .65) 35%, transparent 72%);
+  mask-image: radial-gradient(circle 15vmax at var(--pointer-x) var(--pointer-y), #000 0, rgba(0, 0, 0, .65) 35%, transparent 72%);
+  transition: opacity .5s ease;
+}
+.poster-vignette {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, .3) 0, transparent 18%, transparent 58%, #000 100%),
+    radial-gradient(ellipse at center, transparent 42%, rgba(0, 0, 0, .5) 100%);
+}
+.poster-logo {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 65%;
+  width: clamp(220px, 30vw, 460px);
+  transform: translate(-50%, -50%);
+}
+.poster-logo::before {
+  content: "";
+  position: absolute;
+  inset: -3%;
+  background: url("对折脑浆.png") center / contain no-repeat;
+  filter: invert(1) blur(7px);
+  opacity: .22;
+}
+.poster-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  filter: invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, .2));
+  opacity: .9;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, rgba(0, 0, 0, .8) 76%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 55%, rgba(0, 0, 0, .8) 76%, transparent 100%);
+}
+.poster-status {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 8.5%;
+  margin: 0;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, .46);
+  font-size: 8px;
+  letter-spacing: .24em;
+  white-space: nowrap;
+}
+.poster-scroll {
+  position: absolute;
+  z-index: 3;
+  right: max(28px, calc((100vw - 1180px) / 2));
+  bottom: 7.5%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: rgba(255, 255, 255, .48);
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+.poster-scroll i {
+  width: 1px;
+  height: 38px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .2);
+}
+.poster-scroll i::after {
+  content: "";
+  position: absolute;
+  inset: -100% 0 100%;
+  background: #fff;
+  animation: scroll-signal 2.2s ease-in-out infinite;
+}
+@keyframes tree-light-flow {
+  0% { -webkit-mask-position: -48% 2%; mask-position: -48% 2%; opacity: .38; }
+  24% { opacity: .9; }
+  50% { -webkit-mask-position: 48% 23%; mask-position: 48% 23%; opacity: 1; }
+  78% { opacity: .82; }
+  100% { -webkit-mask-position: 145% 5%; mask-position: 145% 5%; opacity: .34; }
+}
+@keyframes scroll-signal {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(200%); }
+}
+@media (max-width: 820px) {
+  .poster-logo { top: 66%; width: min(68vw, 360px); }
+  .poster-status { bottom: 10%; }
+  .poster-scroll { right: 20px; bottom: 8%; }
+  .poster-scroll span { display: none; }
+  .poster-pointer-light { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .poster-light-flow {
+    animation: none;
+    -webkit-mask-position: 50% 18%;
+    mask-position: 50% 18%;
+  }
+}
