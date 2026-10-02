@@ -791,3 +791,17 @@ h1 em { color: var(--accent); font-style: normal; }
   .credits-section { padding-block: 100px; }
   .credits-list > div { grid-template-columns: 95px 1fr; }
 }
+
+/* Simplified section framing */
+.site-header { justify-content: flex-end; }
+.story-section { display: block; }
+.story-body { max-width: 760px; margin-inline: auto; }
+.chapter-list { margin-top: 0; }
+.credits-section { display: block; }
+.credits-list { max-width: 900px; margin-inline: auto; }
+.site-footer { grid-template-columns: 1fr 1fr; }
+.site-footer > p { text-align: left; }
+
+@media (max-width: 820px) {
+  .site-footer { grid-template-columns: 1fr; }
+}
