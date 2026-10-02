@@ -94,3 +94,38 @@ if (introGallery) {
   showSlide(0);
   startGallery();
 }
+
+const siteBgm = document.querySelector('[data-site-bgm]');
+
+if (siteBgm) {
+  const unlockEvents = ['pointerdown', 'touchstart', 'keydown'];
+  let waitingBetweenLoops = false;
+  let restartTimer;
+
+  const removeUnlockListeners = () => {
+    unlockEvents.forEach((eventName) => document.removeEventListener(eventName, tryPlayBgm));
+  };
+
+  const tryPlayBgm = async () => {
+    if (waitingBetweenLoops) return;
+    try {
+      await siteBgm.play();
+      removeUnlockListeners();
+    } catch {
+      // Browsers may block audible autoplay until the first user interaction.
+    }
+  };
+
+  siteBgm.addEventListener('ended', () => {
+    waitingBetweenLoops = true;
+    window.clearTimeout(restartTimer);
+    restartTimer = window.setTimeout(() => {
+      waitingBetweenLoops = false;
+      siteBgm.currentTime = 0;
+      tryPlayBgm();
+    }, 4000);
+  });
+
+  unlockEvents.forEach((eventName) => document.addEventListener(eventName, tryPlayBgm));
+  tryPlayBgm();
+}
