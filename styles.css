@@ -576,6 +576,17 @@ h1 em { color: var(--accent); font-style: normal; }
   letter-spacing: -.06em;
 }
 .game-stats strong span { color: #d76073; font-size: .55em; }
+.game-stats strong.free-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .04em;
+  line-height: 1;
+}
+.game-stats strong.free-stat span {
+  color: inherit;
+  font-size: inherit;
+}
 .game-stats > div > span { color: #767780; font-size: 11px; letter-spacing: .1em; }
 
 .story-section {
