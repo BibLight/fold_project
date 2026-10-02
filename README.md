@@ -1,6 +1,6 @@
-# FOLD PROJECT
+# 对折PROJECT
 
-独立游戏 `FOLD PROJECT` 的官方网站骨架，可直接部署至 GitHub Pages。
+`对折PROJECT` 的官方网站，可直接部署至 GitHub Pages。
 
 ## 本地预览
 
