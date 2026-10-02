@@ -90,9 +90,36 @@
       <section id="intro" class="game-intro section-shell">
         <div class="content-index reveal">01 / GAME PROFILE</div>
         <div class="intro-layout">
-          <div class="intro-heading reveal">
-            <p class="content-kicker">VISUAL NOVEL × MYSTERY</p>
-            <h2>在梦里活下去。<br /><span>在现实里醒来。</span></h2>
+          <div class="intro-gallery reveal" data-intro-gallery aria-label="角色插画轮播">
+            <div class="intro-slides">
+              <figure class="intro-slide is-active" style="--slide-image: url('pics/介绍页/318-1.png')">
+                <img src="pics/介绍页/318-1.png" alt="角色插画一" decoding="async" />
+              </figure>
+              <figure class="intro-slide" style="--slide-image: url('pics/介绍页/319.png')">
+                <img src="pics/介绍页/319.png" alt="角色插画二" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="intro-slide" style="--slide-image: url('pics/介绍页/320.png')">
+                <img src="pics/介绍页/320.png" alt="角色插画三" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="intro-slide" style="--slide-image: url('pics/介绍页/321.png')">
+                <img src="pics/介绍页/321.png" alt="角色插画四" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="intro-slide" style="--slide-image: url('pics/介绍页/322.png')">
+                <img src="pics/介绍页/322.png" alt="角色插画五" loading="lazy" decoding="async" />
+              </figure>
+            </div>
+            <div class="intro-gallery-controls">
+              <button type="button" data-gallery-prev aria-label="上一张">←</button>
+              <span class="intro-gallery-count"><b data-gallery-current>01</b> / 05</span>
+              <div class="intro-gallery-dots" role="group" aria-label="选择插画">
+                <button class="is-active" type="button" data-gallery-dot="0" aria-label="第 1 张"></button>
+                <button type="button" data-gallery-dot="1" aria-label="第 2 张"></button>
+                <button type="button" data-gallery-dot="2" aria-label="第 3 张"></button>
+                <button type="button" data-gallery-dot="3" aria-label="第 4 张"></button>
+                <button type="button" data-gallery-dot="4" aria-label="第 5 张"></button>
+              </div>
+              <button type="button" data-gallery-next aria-label="下一张">→</button>
+            </div>
           </div>
           <div class="intro-copy reveal">
             <p>本作是带有痕量设定系推理要素的百合向视觉小说。试玩版共两个主视角角色，正式版共四个主视角角色。</p>
