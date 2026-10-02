@@ -344,3 +344,49 @@ h1 em { color: var(--accent); font-style: normal; }
     mask-position: 50% 18%;
   }
 }
+
+/* Full-width long-poster layout: scrolling reveals the original artwork from
+   top to bottom. Black content begins only after the complete poster. */
+.poster-hero {
+  width: 100%;
+  height: calc(100vw * 2895 / 2039);
+  min-height: 0;
+}
+.poster-scene {
+  position: relative;
+  top: auto;
+  height: 100%;
+  opacity: 1;
+  transform: none;
+}
+.poster-ambient { display: none; }
+.poster-layer {
+  background-position: center top;
+  background-size: 100% auto;
+}
+.poster-pointer-light {
+  opacity: .56;
+  -webkit-mask-image: radial-gradient(circle 23vmax at var(--pointer-x) var(--pointer-y), #000 0, rgba(0, 0, 0, .82) 38%, rgba(0, 0, 0, .34) 62%, transparent 82%);
+  mask-image: radial-gradient(circle 23vmax at var(--pointer-x) var(--pointer-y), #000 0, rgba(0, 0, 0, .82) 38%, rgba(0, 0, 0, .34) 62%, transparent 82%);
+}
+.poster-light-flow {
+  -webkit-mask-size: 44% 38%;
+  mask-size: 44% 38%;
+}
+.poster-vignette {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .22) 0, transparent 12%, transparent 66%, #000 100%);
+}
+.poster-logo { top: 58%; }
+.poster-status {
+  top: 72%;
+  bottom: auto;
+}
+.poster-scroll {
+  top: min(calc(100svh - 72px), calc(100% - 72px));
+  bottom: auto;
+}
+@media (max-width: 820px) {
+  .poster-logo { top: 61%; }
+  .poster-status { top: 82%; bottom: auto; }
+  .poster-scroll { top: min(calc(100svh - 54px), calc(100% - 54px)); bottom: auto; }
+}
