@@ -604,23 +604,6 @@ h1 em { color: var(--accent); font-style: normal; }
   font-size: 15px;
   line-height: 2.1;
 }
-.story-body .story-lead {
-  color: #e5e2dc;
-  font-size: clamp(23px, 2.5vw, 34px);
-  line-height: 1.65;
-  letter-spacing: -.025em;
-}
-.story-body blockquote {
-  margin: 78px 0;
-  padding: 36px 0 36px 34px;
-  border-left: 2px solid #d76073;
-  color: #f0ede7;
-  font-size: clamp(28px, 4vw, 52px);
-  line-height: 1.55;
-  font-weight: 500;
-  letter-spacing: -.04em;
-}
-
 .chapters-section {
   padding-block: 150px;
   border-top: 1px solid var(--line);
@@ -779,7 +762,6 @@ h1 em { color: var(--accent); font-style: normal; }
   .game-stats { margin-top: 60px; }
   .game-stats > div { min-height: 125px; padding: 22px 16px; }
   .story-section { padding-block: 100px; }
-  .story-body blockquote { margin: 55px 0; padding-left: 22px; }
   .chapters-section { padding-block: 100px; }
   .chapter-list { margin-top: 70px; }
   .chapter-card { min-height: 0; margin-bottom: 70px; }
